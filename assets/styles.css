@@ -1,0 +1,90 @@
+/* Chat containers */
+.container {
+    border: 2px solid #dedede;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 1%;
+  }
+
+  .lighter{
+    border-color: #dedede;
+    background-color: #f1f1f1;
+    margin-right: 35%;
+    margin-left: 25%;
+  }
+  
+  /* Darker chat container */
+  .darker {
+    border-color: #ccc;
+    background-color: #ddd;
+    margin-left: 35%;
+    margin-right: 25%;
+  }
+
+  
+  /* Clear floats */
+
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Style images */
+  .container img {
+    float: left;
+    width: 10%;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 3px solid #ccc ;
+  }
+  
+  /* Style the right image */
+  .container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+    border: 3px solid #ccc ;
+  }
+  
+  /* Style time text */
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
+  
+  /* Style time text */
+  .time-left {
+    float: left;
+    color: #999;
+  }
+  
+  .msg_input{
+    padding: 0.5%;
+    border: 2px solid #dedede;
+    border-color: #ccc;
+    background-color: #ddd;
+    margin-left: 25%;
+    margin-right: 25%;
+    outline: none;
+    border-radius: 5px;
+    display: flex;
+  }
+  input[type=text] {
+    width: 90%;
+    padding: 1%;
+    outline: none;
+    border: none;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  input[type=submit] {
+    width: 10%;
+    padding: 1%;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  input[type=submit]:hover{
+    background-color:#dedede;
+  }
