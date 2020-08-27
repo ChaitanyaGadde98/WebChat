@@ -1,11 +1,11 @@
 {
   "name": "webchat",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon assets/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaitanyaGadde98/WebChat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChaitanyaGadde98/WebChat/issues"
+  },
+  "homepage": "https://github.com/ChaitanyaGadde98/WebChat#readme",
+  "description": ""
 }

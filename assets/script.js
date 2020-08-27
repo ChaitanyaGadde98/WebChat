@@ -1,7 +1,7 @@
 const socket = io('http://localhost:3000')
-const messageContainer = document.getElementById('message-container')
+const messageContainer = document.getElementById('msg-container')
 const messageForm = document.getElementById('send-container')
-const messageInput = document.getElementById('message-input')
+const messageInput = document.getElementById('msg-input')
 
 const name = prompt('What is your name?')
 appendMessage('You joined')
@@ -29,6 +29,7 @@ messageForm.addEventListener('submit', e => {
 
 function appendMessage(message) {
   const messageElement = document.createElement('div')
-  messageElement.innerText = message
+  messageElement.setAttribute("id", "msg")
+  messageElement.innerHTML = '<p> '+ message +'</p>';
   messageContainer.append(messageElement)
 }
