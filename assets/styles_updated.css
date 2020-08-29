@@ -1,34 +1,45 @@
+/* *{
+    overflow:scroll;
+} */
 body {
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
-    overflow: scroll;
+    overflow: scroll;    
 }
 #msg-container {
-    position: absolute;
+    position: fixed;
     width: 50%;
     bottom: 15%;
-    
+    /* background: teal; */
+    /* overflow-y: scroll;    */
 }
 
 #msg-container p {
-    border: 2px solid #dedede;
-    border-radius: 5px;
-    padding: 1%;
-    border-color: #ccc;
-    background-color: #ddd;
+    padding-left: 2%;
+    
 }
 
 /* #msg-container div:nth-child(2n) {
     background-color: #FFF;
 } */
-#msg {
-    bottom: 10%;
+#send-msg {
+    border: 2px solid #dedede;
+    border-radius: 5px;
+    border-color: #ccc;
+    background-color: #ddd;
+    margin-left: 35%;
+    margin-bottom: 1%;
 }
-p {
-    bottom: 20%;;
+
+#recv-msg {
+    border: 2px solid #dedede;
+    border-radius: 5px;
+    border-color: #dedede;
+    background-color: #f1f1f1;
+    margin-right: 35%;
+    margin-bottom: 1%;
 }
+
 #send-container {
     position: fixed;
     padding: 0.5%;
@@ -60,6 +71,7 @@ p {
     outline: none;
     border: 2px solid #ccc;
     border-radius: 10px;
+    cursor: pointer;
 }
 #send-button:hover{
     background-color:#dedede;

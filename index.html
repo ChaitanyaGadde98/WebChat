@@ -3,51 +3,21 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Chat App</title>
+    <title>WebChat</title>
 
     <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <!-- <script defer src="chaitanyagadde98.github.io/socket.io/socket.io.js"></script> -->
     <script defer src="assets/script.js"></script>
 
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        #message-container {
-            width: 80%;
-            max-width: 1200px;
-        }
-        #message-container div {
-      background-color: #CCC;
-      padding: 5px;
-    }
+    <link rel="stylesheet" href="assets/styles_updated.css">
 
-    #message-container div:nth-child(2n) {
-      background-color: #FFF;
-    }
-
-    #send-container {
-      position: fixed;
-      padding-bottom: 30px;
-      bottom: 0;
-      background-color: white;
-      max-width: 1200px;
-      width: 80%;
-      display: flex;
-    }
-
-    #message-input {
-      flex-grow: 1;
-    }
-    </style>
 </head>
 <body>
-    <div id="message-container"></div>
+    <div id="msg-container">
+    </div>
     <form id="send-container">
-        <input type="text" id="message-input">
-        <button type="submit" id="send=button">Send</button>
+        <input type="text" id="msg-input" value="You are Connected! Type a message" onfocus="this.value=''">
+        <button type="submit" id="send-button">Send</button>
     </form>
 </body>
 

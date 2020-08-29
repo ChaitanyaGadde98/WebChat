@@ -5,32 +5,46 @@ const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('msg-input')
 
 const name = prompt('What is your name?')
-appendMessage('You joined')
+// appendSendMessage('You joined')
 socket.emit('new-user', name)
 
 socket.on('chat-message', data => {
-  appendMessage(`${data.name}: ${data.message}`)
+  appendRecvMessage(`${data.message}`)
 })
 
 socket.on('user-connected', name => {
-  appendMessage(`${name} connected`)
+  appendRecvMessage(`${name} connected`)
 })
 
 socket.on('user-disconnected', name => {
-  appendMessage(`${name} disconnected`)
+  appendRecvMessage(`${name} disconnected`)
 })
 
 messageForm.addEventListener('submit', e => {
   e.preventDefault()
   const message = messageInput.value
-  appendMessage(`You: ${message}`)
+  appendSendMessage(`${message}`)
   socket.emit('send-chat-message', message)
   messageInput.value = ''
 })
 
-function appendMessage(message) {
-  const messageElement = document.createElement('div')
-  messageElement.setAttribute("id", "msg")
-  messageElement.innerHTML = '<p> '+ message +'</p>';
-  messageContainer.append(messageElement)
+function appendSendMessage(message) {
+  if(message != '' && message.charAt(0) != ' ' )
+  {
+    const messageElement = document.createElement('div')
+    messageElement.setAttribute("id", "send-msg")
+    messageElement.innerHTML = '<p> '+ message +'</p>';
+    messageContainer.append(messageElement)
+  }
+  
+}
+
+function appendRecvMessage(message) {
+  if(message != ''  && message.charAt(0) != ' ')
+  {
+    const messageElement = document.createElement('div')
+    messageElement.setAttribute("id", "recv-msg")
+    messageElement.innerHTML = '<p> '+ message +'</p>';
+    messageContainer.append(messageElement)
+  }
 }
